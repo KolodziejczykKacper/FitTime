@@ -1,0 +1,16 @@
+{
+  "components": {
+    "Header": {
+      "props": [],
+      "description": "Zawiera logo, przycisk Dark Mode i menu nawigacyjne. Sticky u góry."
+    },
+    "Hero": {
+      "props": ["title", "subtitle", "primaryCta", "secondaryCta"],
+      "description": "Sekcja powitalna z H1, tekstem, dwoma przyciskami i pływającym CTA."
+    },
+    "About": {
+      "props": ["photoUrl", "altText", "bio", "competences"],
+      "description": "Zdjęcie trenera i tekst o mnie z listą kompetencji."
+    }
+  }
+}

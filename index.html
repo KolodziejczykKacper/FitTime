@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <!-- Prefetch linków wewnętrznych -->
+  <link rel="prefetch" href="#hero" as="document">
+  <link rel="prefetch" href="#omnie" as="document">
+  <link rel="prefetch" href="#formularz" as="document">
+
+  <!-- Meta‑dane SEO -->
+  <title>Trener Personalny Łódź – EMS i Trening Siłowy</title>
+  <meta name="description" content="Zarezerwuj profesjonalny trening EMS i siłowy online w Warszawie. Trener Personalny XYZ." />
+  <meta property="og:title" content="Trener Personalny XYZ – EMS i Trening Siłowy" />
+  <meta property="og:description" content="Zarezerwuj trening EMS i siłowy online w Warszawie." />
+  <meta property="og:image" content="https://twojadomena.pl/og-image.jpg" />
+  <meta property="og:url" content="https://twojadomena.pl" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON‑LD LocalBusiness i BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Trener Personalny XYZ",
+        "url": "https://twojadomena.pl",
+        "logo": "https://twojadomena.pl/logo.png",
+        "sameAs": ["https://facebook.com/xyz","https://instagram.com/xyz"]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://twojadomena.pl" },
+          { "@type": "ListItem", "position": 2, "name": "O mnie", "item": "https://twojadomena.pl#omnie" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Style -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="header" class="sticky">
+    <nav class="container flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <div class="logo">FitTime</div>
+        <!-- Toggle: dwie grafiki -->
+        <button id="themeToggle" class="toggle-btn" aria-label="Przełącz tryb">
+          <img id="iconTheme" src="icons/moon.svg" alt="Dark Mode" width="24" height="24">
+        </button>
+      </div>
+      <ul class="menu flex space-x-6">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#omnie">O mnie</a></li>
+        <li><a href="#hero">Treningi</a></li>
+        <li><a href="#hero">Cennik</a></li>
+        <li><a href="#omnie">Kontakt</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero-section text-center">
+    <h1>Profesjonalny trener personalny – Treningi EMS i Siłowe</h1>
+    <p>Zarezerwuj trening EMS online w Warszawie</p>
+    <div class="hero-buttons">
+      <a href="#formularz" class="btn primary">Rezerwuj</a>
+      <a href="#omnie" class="btn secondary">Dowiedz się więcej</a>
+    </div>
+    <!-- Floating CTA -->
+    <a id="stickyBtn" href="#formularz" class="sticky-btn" aria-label="Rezerwuj">Rezerwuj</a>
+  </section>
+
+  <!-- O MNIE -->
+  <section id="omnie" class="about-section container flex flex-col md:flex-row items-center gap-8">
+    <!-- Picture z WebP/AVIF fallbackami + lazy-loading -->
+    <picture class="about-photo">
+     <!-- <source srcset="img/rainer.jpg" type="image/avif">
+      <source srcset="img/trainer.jpg" type="image/webp">-->
+      <img src="img/trainer.jpg" alt="Trener Personalny XYZ" loading="lazy">
+    </picture>
+    <div class="about-text">
+      <h2>O mnie</h2>
+      <p>Jestem certyfikowanym trenerem z 10‑letnim doświadczeniem w EMS i treningu siłowym...</p>
+      <ul class="competences">
+        <li>✔️ Trening EMS certyfikowany</li>
+        <li>✔️ Indywidualne plany żywieniowe</li>
+        <li>✔️ Sesje online i stacjonarne</li>
+      </ul>
+    </div>
+  </section>
+
+
+   <!-- ============================= -->
+  <!-- 4. TRENINGI – Uniwersalny komponent -->
+  <!-- ============================= -->
+  <section id="treningi" class="container py-20">
+    <h2 class="section-title text-center mb-8">Treningi</h2>
+    <div id="trainingsGrid" class="cards-grid">
+      <!-- Karty zostaną wygenerowane dynamicznie przez JS -->
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 5. CENNIK + CI/CD badge -->
+  <!-- ============================= -->
+  <section id="cennik" class="container py-20 bg-gray-light">
+    <h2 class="section-title text-center mb-8">Cennik</h2>
+    <div id="pricingGrid" class="cards-grid">
+      <!-- Karty pakietów generuje JS -->
+    </div>
+    <div class="ci-badge text-center mt-8">
+      <a href="https://github.com/twoje-repo/status">
+        <img src="https://img.shields.io/github/actions/workflow/status/twoje-repo/main.yml?branch=main"
+             alt="CI/CD status">
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 6. KALENDARZ + JSON‑LD Event -->
+  <!-- ============================= -->
+  <section id="kalendarz" class="container py-20">
+    <h2 class="section-title text-center mb-8">Kalendarz</h2>
+    <!-- Filtr treningów -->
+    <div class="filter mb-4 text-center">
+      <label><input type="checkbox" value="EMS" checked> EMS</label>
+      <label><input type="checkbox" value="Cardio" checked> Cardio</label>
+      <label><input type="checkbox" value="Siłowy" checked> Siłowy</label>
+      <label><input type="checkbox" value="Mobilność" checked> Mobilność</label>
+    </div>
+    <!-- Siatka slotów -->
+    <div id="calendarGrid" class="calendar-grid"></div>
+    
+    <!-- JSON‑LD Event (przykład pierwszego slotu) -->
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"Event",
+      "name":"Trening EMS",
+      "startDate":"2025-08-01T10:00",
+      "location":{"@type":"Place","name":"Studio XYZ"}
+    }
+    </script>
+  </section>
+
+  <!-- ============================= -->
+  <!-- 7. FORMULARZ REZERWACYJNY + .ICS -->
+  <!-- ============================= -->
+  <section id="formularz" class="container py-20 bg-gray-light">
+    <h2 class="section-title text-center mb-8">Zarezerwuj Trening</h2>
+    <form id="bookingForm" class="booking-form max-w-lg mx-auto">
+      <label>Imię:<input type="text" name="name" required></label>
+      <label>E‑mail:<input type="email" name="email" required></label>
+      <label>Telefon:<input type="tel" name="phone"></label>
+      <label>Wybierz slot:
+        <select name="slot" required>
+          <!-- opcje JS wypełni dynamicznie -->
+        </select>
+      </label>
+      <button type="submit" class="btn primary">Potwierdź rezerwację</button>
+    </form>
+    <div id="icsLinks" class="text-center mt-4"></div>
+  </section>
+
+  <!-- ============================= -->
+<!-- 8. OPINIE (Testimonials) -->
+<!-- ============================= -->
+<section id="opinie" class="container py-20">
+  <h2 class="section-title text-center mb-8">Opinie</h2>
+  
+  <div class="testimonial-slider">
+    <div class="slides">
+      <div class="slide" tabindex="0">
+        <blockquote>
+          <p>"Dzięki treningom u XYZ poprawiłem kondycję o 200%! Polecam każdemu."</p>
+          <footer>— Jan Kowalski</footer>
+        </blockquote>
+      </div>
+      <div class="slide" tabindex="0">
+        <blockquote>
+          <p>"Profesjonalne podejście i genialne plany żywieniowe."</p>
+          <footer>— Anna Nowak</footer>
+        </blockquote>
+      </div>
+      <div class="slide" tabindex="0">
+        <blockquote>
+          <p>"Nigdy nie czułem się silniejszy. Treningi EMS działają cuda."</p>
+          <footer>— Marek Wiśniewski</footer>
+        </blockquote>
+      </div>
+    </div>
+    
+    <!-- Strzałki nawigacji -->
+    <button class="slider-btn prev" aria-label="Poprzednia opinia">‹</button>
+    <button class="slider-btn next" aria-label="Następna opinia">›</button>
+    
+    <!-- Kropki -->
+    <div class="dots" role="tablist"></div>
+  </div>
+</section>
+
+  <script src="script.js"></script>
+</body>
+</html>
